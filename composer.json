@@ -11,7 +11,8 @@
         "laravel/tinker": "~1.0",
         "laravelcollective/html": "^5.4.0",
         "renatomarinho/laravel-page-speed": "^1.8",
-        "rndediiv2/smart-dev-usability": "^0.1.0"
+        "rndediiv2/smart-dev-usability": "^0.1.0",
+        "snowfire/beautymail": "dev-master"
     },
     "require-dev": {
         "filp/whoops": "~2.0",

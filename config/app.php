@@ -180,7 +180,7 @@ return [
         Collective\Html\HtmlServiceProvider::class,
         RenatoMarinho\LaravelPageSpeed\ServiceProvider::class,
         rndediiv2\SmartDevUsability\SmartDevUsabilityServiceProvider::class,
-
+        Snowfire\Beautymail\BeautymailServiceProvider::class,
     ],
 
     /*

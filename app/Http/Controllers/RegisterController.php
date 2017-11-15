@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Validator;
 use rndediiv2\SmartDevUsability\Facade\SmartDevUsability;
+use Snowfire\Beautymail\Beautymail;
 use App\CustomsDeclaration;
 use App\CustomDeclarationGoods;
 
@@ -67,6 +68,14 @@ class RegisterController extends Controller
                         CustomDeclarationGoods::create($txCustomDeclarationGoods);
                     }
                 }
+                $beautymail = app()->make(\Snowfire\Beautymail\Beautymail::class);
+                $beautymail->send('component.mail.register', [], function($message)
+                {
+                    $message
+                        ->from('donotreply@justlaravel.com')
+                        ->to($txCustomsDeclaration['cd_email'], 'Howdy buddy!')
+                        ->subject('Custom Declaration - Confirmation');
+                });
                 return response()->json([
                     'message' => 'Register Successfully',
                     'redirect' => [
